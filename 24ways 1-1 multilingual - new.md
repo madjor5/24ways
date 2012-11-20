@@ -13,7 +13,7 @@ If not all pages have all languages, you could make a boolean field, that "activ
 So, for some odd reason there's no extension method for fetching current culture in default Umbraco (I know there are packages around doing that). But there's a very simple hack you could do, and i quite like it.
 You simply create a dictionary item, I call it "currentCulture", and then fill your field postfix texts in each language ('da' and 'en').
 ## Helper XSLT's
-I really like to make and use default helper xslt's (Thanks a bunch @greystate for the inspiration). This is basically a seperate XSLT file I include in pages where needed, containing some templates and some variables I use sitewise. In this case I use _MultiLingualHelper.xslt **(See repo for file)**. The methods I'll be storing in this file is:
+I really like to make and use default helper xslt's (Thanks a bunch @greystate for the inspiration). This is basically a seperate XSLT file I include in pages where needed, containing some templates and some variables I use sitewise. In this case I use This is [_MultiLingualHelper.xslt](http://example.com/ "Title") inline link. The methods I'll be storing in this file is:
 - Language detection (variable named $lang)
 - Complete postfix for fields ($lang_postfix)
 - A helper for fetching active pages in current language **(at least som documentation on that)**.
