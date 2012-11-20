@@ -16,7 +16,8 @@ You simply create a dictionary item, I call it "currentCulture", and then fill y
 I really like to make and use default helper xslt's (Thanks a bunch @greystate for the inspiration). This is basically a seperate XSLT file I include in pages where needed, containing some templates and some variables I use sitewise. In this case I use This is [_MultiLingualHelper.xslt](XSLT/_MultiLingualHelper.xslt "XSLT File"). The methods I'll be storing in this file is:
 - Language detection (variable named $lang)
 - Complete postfix for fields ($lang_postfix)
-- A helper for fetching active pages in current language **(at least som documentation on that)**.
+- Fallback language
+- Some default settings to generate some content.
 ## Fetching the right version of the field
 Now for fetching the right version of a field, I'll use some xPath.
 
