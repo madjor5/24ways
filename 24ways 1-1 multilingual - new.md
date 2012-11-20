@@ -11,7 +11,7 @@ First off, we're giving the user several tabs in any document template represent
 	- Header (header_da)
 	- Body Text (bodyText_da)
 
-![Document type](doctype.jpg)
+![Document Type settings](./doctype.jpg "Optional title")
 
 When postfixing, we have the opportunity to fetch them from our macro's (I'll be doing it in XSLT).
 If not all pages have all languages, you could make a boolean field, that "activates" the language edition. This will typically help you in your navigation macros, so the pages not available in current language actually won't show in navigation.
