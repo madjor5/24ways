@@ -5,7 +5,7 @@ Quite simply, it's when you have the exact same pages in every language. A CMS l
 ## How to handle in Umbraco's backoffice
 First off, we're giving the user several tabs in any document template representing the different languages. Then what we do, is to postfix all our fields with the culture code when creating them in the document type. See screenshot for my example.
 
-![Document Type settings](madjor5.github.com/24ways/doctype.jpg)
+![Document Type settings](doctype.jpg)
 
 When postfixing, we have the opportunity to fetch them from our macro's (I'll be doing it in XSLT).
 If not all pages have all languages, you could make a boolean field, that "activates" the language edition. This will typically help you in your navigation macros, so the pages not available in current language actually won't show in navigation.
