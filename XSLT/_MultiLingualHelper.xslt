@@ -34,4 +34,26 @@
   <xsl:variable name="fallback_lang" select="'en'" />
   <xsl:variable name="fallback_lang_append" select="'_en'" />
 
+  <xsl:template name="languageList">
+    <nav>
+      <ul class="changeLanguage">
+        <!-- Current Langage -->
+        <li class="active"><xsl:value-of select="$lang"></li>
+        <xsl:apply-templates match="$domains/domain[@id!=$lang]" mode="langChanger" />
+      </ul>
+    </nav>
+  </xsl:template>
+  <xsl:template match="domain" mode="langChanger">
+    <li class="@class">
+      <a href="{@domain-prefix}{$baseURL}{umb:NiceUrl($currentPage/@id)}">
+        <xsl:if test="not($currentPage/*[./*[name() = concat('activateLanguage', $lang_postfix)] = 1])">
+          <xsl:attribute name="href">
+            <xsl:value-of select="@domain-prefix" /><xsl:value-of select="$baseURL" />
+          </xsl:attribute>
+        </xsl:if>
+        <xsl:value-of select="@id" />
+      </a>
+    </li>
+  </xsl:template>
+
 </xsl:stylesheet>
