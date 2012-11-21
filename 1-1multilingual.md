@@ -1,5 +1,5 @@
 # 1-1 multilingual websites in Umbraco
-Classic problem in Umbraco, you have a 1-1 multilingual website, but Umbraco isn't quite made for handling that. This is how we, in our company, normally handle that. Usually there's quite a bit of custom stuff to handle, as their not quite 1-1 anyways, but that I won't cover in this article.
+Classic challange in Umbraco: You have a 1-1 multilingual website, but Umbraco isn't quite made for handling that. This is how we, in [Illumi](http://www.illumi.dk), normally handle that. Usually there's quite a bit of custom stuff to handle, as their not quite 1-1 anyways, but that I won't cover in this article.
 ## What is 1-1 multilingual websites
 Quite simply, it's when you have the exact same pages in every language. A CMS like SiteCore would handle it with the abillity to version any given item in several languages by clicking a flag in the backend, and then using culture codes to fetch the right language.
 ## How to handle in Umbraco's backoffice
