@@ -18,13 +18,21 @@ I really like to make and use default helper xslt's (Thanks a bunch @greystate f
 - Complete postfix for fields ($lang_postfix)
 - Fallback language
 - Some default settings to generate some content.
+
 ## Fetching the right version of the field
 Now for fetching the right version of a field, I'll use some xPath.
-
+	
 	*[name() = concat('header', $lang_postfix)]
 
-Explained shortly, the concat part add's _da or _en to the fieldname, and we then fetches the field that has that name. Easy peasy. See [NavigatonExample.xslt](XSLT/NavigationExample.xslt "XSLT File") for further inspiration.
+Explained shortly, the concat part add's _da or _en to the fieldname, and we then fetches the field that has that name. Easy peasy. See [NavigatonExample.xslt](XSLT/NavigationExample.xslt "XSLT File") in line 24 for further inspiration.
 ## Setting up hostnames
 Now for the system to detect wich language / culture the user wants we use sub-domains. www.domain.com and da.domain.com. Simply use native umbraco features to set up **hostheaders** per domain.
 Is the sub-domain or extension domain necessary? Yeah, I do believe that it is, since you have to be very careful not to make duplicate content, as Google won't like that. Of course there is the opportunity to do it all without domain changes, but I like the clear and obvious solution it provides.
+## Navigation
+Navigations in a multilingual setup is basically not that different from default navigation snippets. The main difference is in this line:
+	
+	<xsl:apply-templates select="$currentPage/ancestor-or-self::Frontpage/*[./*[name() = concat('activateLanguage', $lang_postfix)] = 1]" mode="page" />
+	
+From [NavigatonExample.xslt](XSLT/NavigationExample.xslt "XSLT File") line 16. What it basically does is, using xpath to fetch only pages that are activated throug the checkbox.
+
 ## Changing language
