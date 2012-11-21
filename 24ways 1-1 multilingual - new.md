@@ -36,3 +36,5 @@ Navigations in a multilingual setup is basically not that different from default
 From [NavigatonExample.xslt](XSLT/NavigationExample.xslt "XSLT File") line 16. What it basically does is, using xpath to fetch only pages that are activated throug the checkbox.
 
 ## Changing language
+This is one of the more difficult things. What we need to consider is, if the actual page i'm viewing is available on another wanted language, link to the same page, but with the other language domain. Otherwise link to the other language frontpage.
+See [_MultiLingualHelper.xslt](XSLT/_MultiLingualHelper.xslt "XSLT File") for templates doing this.
