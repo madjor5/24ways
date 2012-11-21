@@ -38,3 +38,10 @@ From [NavigatonExample.xslt](XSLT/NavigationExample.xslt "XSLT File") line 16. W
 ## Changing language
 This is one of the more difficult things. What we need to consider is, if the actual page i'm viewing is available on another wanted language, link to the same page, but with the other language domain. Otherwise link to the other language frontpage.
 See [_MultiLingualHelper.xslt](XSLT/_MultiLingualHelper.xslt "XSLT File") for templates doing this.
+
+That's how I do 1-1 multilingual websites in Umbraco. I beliefve there could be more to it, if you have loads of special features. I recommend looking into differencing dates and currency formats per language as well, but it won't be covered here.
+
+Any questions, ideas and comments, please contact me via my twitter handle @madjor5. If you wan't to see what else I'm up to, take a look at [Illumi.dk](http://www.illumi.dk) for further information.
+
+Thank you for reading
+Mads Jørgensen

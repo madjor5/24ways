@@ -34,19 +34,24 @@
   <xsl:variable name="fallback_lang" select="'en'" />
   <xsl:variable name="fallback_lang_append" select="'_en'" />
 
+  <!-- Template to generate a list of languages, first is allways current language -->
   <xsl:template name="languageList">
     <nav>
       <ul class="changeLanguage">
         <!-- Current Langage -->
         <li class="active"><xsl:value-of select="$lang"></li>
+        <!-- apply templates to all other langs i domains var -->
         <xsl:apply-templates match="$domains/domain[@id!=$lang]" mode="langChanger" />
       </ul>
     </nav>
   </xsl:template>
   <xsl:template match="domain" mode="langChanger">
+    <!-- LI with the classname of the respective lang, for css ability to show flags etc. -->
     <li class="@class">
       <a href="{@domain-prefix}{$baseURL}{umb:NiceUrl($currentPage/@id)}">
+        <!-- default href is to current page on other language -->
         <xsl:if test="not($currentPage/*[./*[name() = concat('activateLanguage', $lang_postfix)] = 1])">
+          <!-- if currentpage don't exist in requested lang, link to frontpage -->
           <xsl:attribute name="href">
             <xsl:value-of select="@domain-prefix" /><xsl:value-of select="$baseURL" />
           </xsl:attribute>
