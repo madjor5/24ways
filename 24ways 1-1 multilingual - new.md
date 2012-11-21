@@ -23,7 +23,7 @@ Now for fetching the right version of a field, I'll use some xPath.
 
 	*[name() = concat('header', $lang_postfix)]
 
-Explained shortly, the concat part add's _da or _en to the fieldname, and we then fetches the field that has that name. Easy peasy. See [NavigatonExample.xslt](XSLT/NAvigationExample.xslt "XSLT File") for further inspiration.
+Explained shortly, the concat part add's _da or _en to the fieldname, and we then fetches the field that has that name. Easy peasy. See [NavigatonExample.xslt](XSLT/NavigationExample.xslt "XSLT File") for further inspiration.
 ## Setting up hostnames
 Now for the system to detect wich language / culture the user wants we use sub-domains. www.domain.com and da.domain.com. Simply use native umbraco features to set up **hostheaders** per domain.
 Is the sub-domain or extension domain necessary? Yeah, I do believe that it is, since you have to be very careful not to make duplicate content, as Google won't like that. Of course there is the opportunity to do it all without domain changes, but I like the clear and obvious solution it provides.
